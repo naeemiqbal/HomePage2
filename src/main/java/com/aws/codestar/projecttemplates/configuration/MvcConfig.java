@@ -23,14 +23,18 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/").setCachePeriod(ONE_YEAR);
     }
-/*
+
+
+
     @Bean
     public InternalResourceViewResolver jspViewResolver() {
         InternalResourceViewResolver bean = new InternalResourceViewResolver();
-        bean.setPrefix("/WEB-INF/views/");
-        bean.setSuffix(".jsp");
+     /*   bean.setPrefix("/WEB-INF/views/");
+        bean.setSuffix(".jsp");*/
+        bean.setPrefix("/");
+        bean.setSuffix(".html");
         return bean;
-    }*/
+    }
 
     @Bean(name = "multipartResolver")
     public CommonsMultipartResolver getMultipartResolver() {
