@@ -24,14 +24,11 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/").setCachePeriod(ONE_YEAR);
     }
 
-
-
     @Bean
     public InternalResourceViewResolver jspViewResolver() {
         InternalResourceViewResolver bean = new InternalResourceViewResolver();
-       // bean.setPrefix("/WEB-INF/views/");
+        bean.setPrefix("/WEB-INF/views/");
         bean.setSuffix(".jsp");
-
         return bean;
     }
 
